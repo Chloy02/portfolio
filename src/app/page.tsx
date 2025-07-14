@@ -2,14 +2,20 @@
 
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Projects from "@/components/Projects"; // <-- 1. Import it
+import Projects from "@/components/Projects";
+import Music from "@/components/Music";
+import Contact from "@/components/Contact"; // <-- 1. Import Contact
+import Footer from "@/components/Footer";   // <-- 2. Import Footer
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <About />
-      <Projects /> {/* <-- 2. Add it here */}
+      <Projects />
+      <Music />
+      <Contact /> {/* <-- 3. Add Contact */}
+      <Footer />  {/* <-- 4. Add Footer */}
     </main>
   );
 }
