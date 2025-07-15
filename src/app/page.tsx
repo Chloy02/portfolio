@@ -4,18 +4,35 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Music from "@/components/Music";
-import Contact from "@/components/Contact"; // <-- 1. Import Contact
-import Footer from "@/components/Footer";   // <-- 2. Import Footer
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-black">
       <Hero />
-      <About />
-      <Projects />
-      <Music />
-      <Contact /> {/* <-- 3. Add Contact */}
-      <Footer />  {/* <-- 4. Add Footer */}
+      
+      {/* This now has the correct padding and background */}
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8">
+        <About />
+      </section>
+
+      {/* Using a dark gray for this section for visual separation */}
+      <section id="projects" className="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8">
+        <Projects />
+      </section>
+
+      {/* Back to black for the next section */}
+      <section id="music" className="py-24 px-4 sm:px-6 lg:px-8">
+        <Music />
+      </section>
+
+      {/* Dark gray again for the contact section */}
+      <section id="contact" className="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8">
+        <Contact />
+      </section>
+
+      <Footer />
     </main>
   );
 }
