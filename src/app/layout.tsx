@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar"; // <-- 1. Import Navbar
+import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react"; // <-- 1. Import Analytics
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={inter.className}>
-        <Navbar /> {/* <-- 2. Add Navbar here */}
+        <Navbar />
         {children}
+        <Analytics /> {/* <-- 2. Add the component here */}
       </body>
     </html>
   );
