@@ -13,7 +13,7 @@ export default function Music() {
           
           <div className="md:col-span-1">
             <Image
-              src="/chloy-performance.jpg" // This now points to YOUR image
+              src="/chloy-performance.webp" // This now points to YOUR image
               alt="Chloy Costa performing with a guitar"
               width={500}
               height={500}
