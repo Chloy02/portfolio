@@ -3,8 +3,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger and Close icons
+// 1. Import Variants type from framer-motion
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -20,7 +21,8 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const menuVariants = {
+  // 2. Explicitly type menuVariants with the Variants type
+  const menuVariants: Variants = {
     hidden: { opacity: 0, y: "-100%" },
     visible: { opacity: 1, y: 0, transition: { type: "tween", ease: "easeInOut", duration: 0.4 } },
     exit: { opacity: 0, y: "-100%", transition: { type: "tween", ease: "easeInOut", duration: 0.3 } },
@@ -36,14 +38,12 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo/Name */}
             <div className="flex-shrink-0">
               <Link href="#" className="text-white font-bold text-xl">
                 Chloy Costa
               </Link>
             </div>
             
-            {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {navLinks.map((link) => (
@@ -58,7 +58,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button onClick={toggleMenu} className="text-gray-300 hover:text-white focus:outline-none">
                 {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -68,7 +67,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -84,7 +82,7 @@ export default function Navbar() {
                   key={link.name} 
                   href={link.href} 
                   className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-2xl font-medium"
-                  onClick={toggleMenu} // Close menu on link click
+                  onClick={toggleMenu}
                 >
                   {link.name}
                 </Link>
