@@ -1,6 +1,5 @@
 // src/components/About.tsx
 
-// Sourced directly from your CV's Technical Skills section
 const skills = [
   "Python", "Java", "Kotlin", "SQL", "JavaScript", "R", "Scikit-learn", 
   "Pandas", "OpenCV", "TensorFlow", "PyTorch", "XGBoost", "Astropy", 
@@ -14,12 +13,12 @@ export default function About() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         
         <div>
-          <h2 className="text-3xl font-bold mb-4">Faith-Rooted. Starstruck. Python-Powered. [cite: 1]</h2>
+          <h2 className="text-3xl font-bold mb-4">Faith-Rooted. Starstruck. Python-Powered.</h2>
           <p className="text-gray-400 leading-relaxed">
-            Code poet by day, star-gazer with purpose by night. My journey started in the world of physics, but I found my true orbit in building software. I thrive at the intersection of complex problems and elegant solutions, whether it's training a machine to understand galaxies or composing a melody. [cite: 1, 26, 31, 33]
+            Code poet by day, star-gazer with purpose by night. My journey started in the world of physics, but I found my true orbit in building software. I thrive at the intersection of complex problems and elegant solutions, whether it&apos;s training a machine to understand galaxies or composing a melody.
           </p>
           <p className="text-gray-400 leading-relaxed mt-4">
-            Once played at a fest, now I play with datasets. [cite: 1] And yes, I run Fedora. Don't ask. [cite: 1]
+            Once played at a fest, now I play with datasets. And yes, I run Fedora. Don&apos;t ask.
           </p>
         </div>
 

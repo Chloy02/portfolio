@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section className="bg-black text-white py-20 px-4 md:px-16">
       <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>
         <p className="text-gray-400 mb-8">
           Got a project, a wild idea, or just want to talk about the universe (or code)? My inbox is always open.
         </p>

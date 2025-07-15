@@ -13,7 +13,7 @@ export default function Music() {
           
           <div className="md:col-span-1">
             <Image
-              src="/chloy-performance.webp" // This now points to YOUR image
+              src="/chloy-performance.jpg"
               alt="Chloy Costa performing with a guitar"
               width={500}
               height={500}
@@ -24,10 +24,10 @@ export default function Music() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-3">Music & Ministry</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Leading choirs, organizing state-level Battle of the Bands, and performing for the university—music has always been my parallel passion. It's the other half of my creative core, a space for raw expression and connection. While I don't have tracks on Spotify yet, you can catch the vibe on my Instagram.
+              Leading choirs, organizing state-level Battle of the Bands, and performing for the university—music has always been my parallel passion. It&apos;s the other half of my creative core, a space for raw expression and connection. While I don&apos;t have tracks on Spotify yet, you can catch the vibe on my Instagram.
             </p>
             <a 
-              href="https://instagram.com/chloy_costa" // Links directly to your Instagram
+              href="https://instagram.com/chloy_costa"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105"
