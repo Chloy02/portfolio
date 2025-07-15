@@ -48,3 +48,30 @@ body {
     flex: 0 0 33.3333%;
   }
 }
+
+.embla__prev,
+.embla__next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* 40px */
+  height: 2.5rem; /* 40px */
+  border-radius: 50%;
+  background-color: rgb(31 41 55); /* bg-gray-800 */
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.embla__prev:hover,
+.embla__next:hover {
+  background-color: rgb(55 65 81); /* bg-gray-700 */
+}
+
+.embla__prev:disabled,
+.embla__next:disabled {
+  opacity: 0.3;
+}
+
+.embla.is-dragging {
+  cursor: grabbing;
+}
