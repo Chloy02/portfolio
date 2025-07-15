@@ -1,5 +1,5 @@
 // src/components/Hero.tsx
-"use client"; // Keep this for animations
+"use client";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -22,9 +22,9 @@ export default function Hero() {
             Chloy Costa
           </span>
         </h1>
-        {/* This is new copy, inspired by your "thoughts" and captions */}
+        {/* NEW LINE YOU PROVIDED */}
         <p className="mt-4 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-          I ask big questions. Some I explore with faith and a guitar, <br /> others I answer with Python and the cosmos.
+          &quot;Every path is the right path. Everything could be anything else <br /> and still be just as meaningful through Christ&quot;
         </p>
         <div className="mt-8 w-24 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full" />
       </motion.div>

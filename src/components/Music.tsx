@@ -19,7 +19,9 @@ export default function Music() {
       viewport={{ once: true }}
       className="max-w-6xl mx-auto"
     >
-      <h2 className="text-3xl font-bold text-center mb-12">The Other Side of the Code</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">
+        To Remember Who I Am
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
         <div className="md:col-span-1">
           <Image
@@ -31,9 +33,12 @@ export default function Music() {
           />
         </div>
         <div className="md:col-span-2">
-          <h3 className="text-2xl font-bold mb-3">Sound & Spirit</h3>
+          {/* NEW, AUTHENTIC COPY BUILT FROM YOUR CAPTION */}
           <p className="text-gray-400 mb-6 leading-relaxed">
-            For me, music isn&apos;t a hobby; it&apos;s a ministry. It&apos;s the language I use when code isn&apos;t enough. It&apos;s about leading worship, building community through a Battle of the Bands, or just finding a moment of peace with a guitar. It&apos;s the rhythm that balances the algorithm.
+            We started out a little chaotic, me and this guitar. I first picked her up to escape reality—a quiet act of defiance.
+          </p>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            Now, I pick her up to remember who I am. Every song, every half-formed melody, every midnight lyric... she&apos;s been through it all with me. She&apos;s a reminder to believe in myself, even before I do.
           </p>
           <a
             href="https://instagram.com/chloy_costa"

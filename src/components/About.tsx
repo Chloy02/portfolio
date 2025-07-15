@@ -21,16 +21,15 @@ export default function About() {
       className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
     >
       <div>
-        <h2 className="text-3xl font-bold mb-4">A vessel, not the source.</h2>
+        <h2 className="text-3xl font-bold mb-4">The Journey So Far</h2>
+        {/* SIMPLIFIED BIO */}
         <p className="text-gray-400 leading-relaxed">
-          My journey has been a search for truth, from the physics lab to the codebase. I believe the universe speaks in patterns—some call it science, others call it art. I find my purpose at that intersection, building tools that feel both intelligent and human.
+          My journey began with a degree in Physics, where I fell in love with the universe&apos;s complex patterns. This led me to the world of code, a place where I can not only observe those patterns but build new ones. Now I create tools that are both intelligent and intuitive.
         </p>
+        {/* THE QUOTE YOU KEPT */}
         <blockquote className="border-l-4 border-amber-500 pl-4 my-4 text-gray-300 italic">
           &quot;Do everything in love. That&apos;s the only way to make something that lasts, whether it&apos;s a relationship or a repository.&quot;
         </blockquote>
-        <p className="text-gray-400 leading-relaxed mt-4">
-          This philosophy guides my work, my music, and my life.
-        </p>
       </div>
       <div>
         <h3 className="text-2xl font-bold mb-6">My Toolbox</h3>
