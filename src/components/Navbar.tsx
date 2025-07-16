@@ -8,10 +8,10 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Music", href: "#music" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" }, // Also update these to be more explicit
+  { name: "Projects", href: "/#projects" },
+  { name: "Music", href: "/music" }, // <-- Changed from #music
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
