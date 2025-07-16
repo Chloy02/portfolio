@@ -3,8 +3,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-// 1. Import the Container type from the engine
-import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticleBackground() {
@@ -17,12 +16,6 @@ export default function ParticleBackground() {
       setInit(true);
     });
   }, []);
-
-  // 2. Update the function parameter to use the correct 'Container' type
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    // You can add any logic here if needed when particles are loaded
-    // console.log(container);
-  };
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -92,7 +85,6 @@ export default function ParticleBackground() {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
         className="fixed inset-0 -z-10"
       />
