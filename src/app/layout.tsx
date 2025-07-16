@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react"; // <-- 1. Import Analytics
+import ParticleBackground from "@/components/ParticleBackground"; // <-- 2. Import ParticleBackground
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={inter.className}>
+        <ParticleBackground /> 
         <Navbar />
         {children}
         <Analytics /> {/* <-- 2. Add the component here */}
