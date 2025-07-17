@@ -2,7 +2,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-// Import your new Lottie component
 import LottieAnimation from './LottieAnimation'; 
 
 const skills = [ "Python", "Java", "Kotlin", "SQL", "JavaScript", "R", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow", "PyTorch", "XGBoost", "Astropy", "Android (Jetpack Compose)", "React", "Node.js", "Streamlit", "Tailwind CSS", "PostgreSQL", "MySQL", "Linux (Fedora)", "Git", "Docker" ];
@@ -29,7 +28,7 @@ export default function About() {
       whileInView="visible"
       variants={sectionVariants}
       viewport={{ once: true }}
-      className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-center"
+      className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center" // Changed gap from 16 to 8
     >
       {/* Column 1: Text */}
       <motion.div className="flex flex-col gap-4 md:col-span-1">
@@ -42,8 +41,9 @@ export default function About() {
         </motion.blockquote>
       </motion.div>
       
-      {/* Column 2: The new Arrow Lottie Animation */}
-      <motion.div variants={itemVariants} className="h-64 md:h-full md:col-span-1">
+      {/* Column 2: The Lottie Animation */}
+      {/* THIS IS THE LINE WE'VE CHANGED */}
+      <motion.div variants={itemVariants} className="w-48 h-48 mx-auto md:col-span-1">
         <LottieAnimation />
       </motion.div>
       
