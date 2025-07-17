@@ -4,21 +4,31 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { projectsData } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Ensure Variants is imported
 import useEmblaCarousel from 'embla-carousel-react';
-import ClassNames from 'embla-carousel-class-names'; // <-- 1. Import the new plugin
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-export default function Projects() {
-  // 2. Add the ClassNames plugin to the useEmblaCarousel hook
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: false, 
-      align: 'start',
-      watchDrag: true, // <-- 3. Explicitly enable dragging
+// CORRECTLY TYPED VARIANTS
+const carouselContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // A slightly longer delay for a more dramatic effect
     },
-    [ClassNames()] // <-- 4. Initialize the plugin
-  );
+  },
+};
+
+const projectItemVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Projects() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: false,
+    align: 'start' 
+  });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -44,20 +54,8 @@ export default function Projects() {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  const FADE_IN_ANIMATION_VARIANTS = {
-    initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0 },
-  };
-
   return (
-    <motion.div
-      initial="initial"
-      whileInView="animate"
-      variants={FADE_IN_ANIMATION_VARIANTS}
-      transition={{ duration: 1, ease: "easeInOut" }}
-      viewport={{ once: true }}
-      className="max-w-6xl mx-auto"
-    >
+    <div className="max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-12">
         <h2 className="text-3xl font-bold text-left">
           Things I&apos;ve Built
@@ -72,16 +70,23 @@ export default function Projects() {
         </div>
       </div>
       
-      {/* 5. The 'is-dragging' class will now be added automatically when you drag */}
       <div className="embla -mx-4" ref={emblaRef}>
-        <div className="embla__container">
+        {/* The container now orchestrates the stagger */}
+        <motion.div 
+          className="embla__container"
+          initial="hidden"
+          whileInView="visible"
+          variants={carouselContainerVariants}
+          viewport={{ once: true }}
+        >
           {projectsData.map((project, index) => (
-            <div className="embla__slide px-4 pt-8 pb-4" key={index}>
+            // Each card is now a motion component
+            <motion.div className="embla__slide px-4 pt-8 pb-4" key={index} variants={projectItemVariants}>
               <ProjectCard {...project} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
