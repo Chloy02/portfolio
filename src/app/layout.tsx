@@ -1,12 +1,15 @@
 // src/app/layout.tsx
+
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Exo_2 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Analytics } from "@vercel/analytics/react"; // <-- 1. Import Analytics
-import ParticleBackground from "@/components/ParticleBackground"; // <-- 2. Import ParticleBackground
+import { Analytics } from "@vercel/analytics/react";
+import ParticleBackground from "@/components/ParticleBackground";
+import { PreloaderProvider } from "@/components/PreloaderContext"; // <-- 1. Import the provider
 
 const inter = Inter({ subsets: ["latin"] });
+const exo2 = Exo_2({ subsets: ["latin"], weight: ['700'] });
 
 export const metadata: Metadata = {
   title: "Chloy Costa | Creative Developer & Musician",
@@ -20,11 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={inter.className}>
-        <ParticleBackground /> 
-        <Navbar />
-        {children}
-        <Analytics /> {/* <-- 2. Add the component here */}
+      <body className={`${inter.className} ${exo2.className}`}>
+        {/* 2. Wrap everything inside the PreloaderProvider */}
+        <PreloaderProvider>
+          <ParticleBackground />
+          <Navbar />
+          {children}
+          <Analytics />
+        </PreloaderProvider>
       </body>
     </html>
   );

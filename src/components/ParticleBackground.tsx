@@ -17,6 +17,8 @@ export default function ParticleBackground() {
     });
   }, []);
 
+  // The unused particlesLoaded function has been removed.
+
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
@@ -41,10 +43,10 @@ export default function ParticleBackground() {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "#FFFFFF",
         },
         links: {
-          color: "#ffffff",
+          color: "#FFFFFF",
           distance: 150,
           enable: true,
           opacity: 0.2,
@@ -85,6 +87,7 @@ export default function ParticleBackground() {
     return (
       <Particles
         id="tsparticles"
+        // The corresponding prop has also been removed.
         options={options}
         className="fixed inset-0 -z-10"
       />
