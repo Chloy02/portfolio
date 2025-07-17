@@ -3,7 +3,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticleBackground() {
@@ -17,7 +17,7 @@ export default function ParticleBackground() {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {};
+  // The unused particlesLoaded function has been removed.
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -42,12 +42,11 @@ export default function ParticleBackground() {
         },
       },
       particles: {
-        // --- THIS IS THE COLOR CHANGE ---
         color: {
-          value: "#FFFFFF", // Changed from gold to white
+          value: "#FFFFFF",
         },
         links: {
-          color: "#FFFFFF", // Changed from gold to white
+          color: "#FFFFFF",
           distance: 150,
           enable: true,
           opacity: 0.2,
@@ -88,7 +87,7 @@ export default function ParticleBackground() {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
+        // The corresponding prop has also been removed.
         options={options}
         className="fixed inset-0 -z-10"
       />
