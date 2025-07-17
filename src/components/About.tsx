@@ -2,6 +2,8 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+// Import your new Lottie component
+import LottieAnimation from './LottieAnimation'; 
 
 const skills = [ "Python", "Java", "Kotlin", "SQL", "JavaScript", "R", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow", "PyTorch", "XGBoost", "Astropy", "Android (Jetpack Compose)", "React", "Node.js", "Streamlit", "Tailwind CSS", "PostgreSQL", "MySQL", "Linux (Fedora)", "Git", "Docker" ];
 
@@ -40,9 +42,9 @@ export default function About() {
         </motion.blockquote>
       </motion.div>
       
-      {/* Column 2: This is now an empty placeholder */}
-      <motion.div variants={itemVariants} className="h-96 md:h-full md:col-span-1">
-        {/* The animation has been removed. This space is ready for a future feature. */}
+      {/* Column 2: The new Arrow Lottie Animation */}
+      <motion.div variants={itemVariants} className="h-64 md:h-full md:col-span-1">
+        <LottieAnimation />
       </motion.div>
       
       {/* Column 3: Toolbox */}

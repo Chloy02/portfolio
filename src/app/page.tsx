@@ -86,15 +86,15 @@ export default function Home() {
       >
         <Hero />
         
-        <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm">
+        <section id="about" className="py-24 px-4 sm:px-6 lg:px-8">
           <About />
         </section>
 
-        <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/30 backdrop-blur-sm">
+       <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/50 backdrop-blur-sm">
           <Projects />
         </section>
 
-        <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/30 backdrop-blur-sm">
+        <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/50 backdrop-blur-sm">
           <Contact />
         </section>
 
