@@ -29,24 +29,45 @@ const textChildVariants: Variants = {
   hidden: { opacity: 0, y: 20, transition: { type: "spring", damping: 12, stiffness: 100 } },
 };
 
+const mainVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" } 
+  },
+};
+
 const text = "Chloy Costa";
 const letters = text.split("");
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
+  // NEW, SMARTER useEffect HOOK
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // This function will be called when the page is fully loaded
+    const handleLoad = () => {
       setIsLoading(false);
-      // Restore cursor and scroll position after loading
       document.body.style.cursor = 'default';
       window.scrollTo(0,0);
-    }, 3000);
+    };
 
-    // Change cursor to 'wait' during loading
-    document.body.style.cursor = 'wait';
-
-    return () => clearTimeout(timer);
+    // Check if the page is already loaded (for fast connections or re-visits)
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      // Otherwise, add an event listener to wait for the 'load' event
+      window.addEventListener('load', handleLoad);
+      // Set a fallback timer in case the 'load' event fails for some reason
+      const fallbackTimeout = setTimeout(handleLoad, 5000); // 5-second max wait
+      
+      // Cleanup function: remove the listener and timeout when the component unmounts
+      return () => {
+        window.removeEventListener('load', handleLoad);
+        clearTimeout(fallbackTimeout);
+      };
+    }
   }, []);
 
   return (
@@ -66,7 +87,7 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               className="flex text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 overflow-hidden"
-              style={{ fontFamily: 'var(--font-exo2)' }} // Apply the Exo 2 font
+              style={{ fontFamily: 'var(--font-exo2)' }}
             >
               {letters.map((letter, index) => (
                 <motion.span variants={textChildVariants} key={index}>
@@ -79,10 +100,10 @@ export default function Home() {
       </AnimatePresence>
 
       <motion.main 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-white" // Transparent background to show particles
+        variants={mainVariants}
+        initial="hidden"
+        animate={!isLoading ? "visible" : "hidden"}
+        className="text-white"
       >
         <Hero />
         
