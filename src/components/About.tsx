@@ -28,7 +28,7 @@ export default function About() {
       whileInView="visible"
       variants={sectionVariants}
       viewport={{ once: true }}
-      className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center" // Changed gap from 16 to 8
+      className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
     >
       {/* Column 1: Text */}
       <motion.div className="flex flex-col gap-4 md:col-span-1">
@@ -43,7 +43,10 @@ export default function About() {
       
       {/* Column 2: The Lottie Animation */}
       {/* THIS IS THE LINE WE'VE CHANGED */}
-      <motion.div variants={itemVariants} className="w-48 h-48 mx-auto md:col-span-1">
+      <motion.div 
+        variants={itemVariants} 
+        className="w-48 h-48 mx-auto md:col-span-1 transform rotate-90 md:rotate-0"
+      >
         <LottieAnimation />
       </motion.div>
       

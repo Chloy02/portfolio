@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 
+// The generateMetadata function has been removed from this file.
+
 export default function MusicPage() {
   const FADE_IN_VARIANTS: Variants = {
     initial: { opacity: 0, y: 20 },
@@ -12,7 +14,6 @@ export default function MusicPage() {
   };
 
   return (
-    // REMOVED 'bg-black' FROM THIS LINE
     <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial="initial"
