@@ -14,6 +14,12 @@ const navLinks = [
   { name: "Contact", href: "/#contact" },
 ];
 
+const resumeLink = {
+  name: "Resume",
+  href: "/Chloy_Costa_resume.pdf",
+  download: true
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,6 +61,14 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                 ))}
+                {/* Resume download link */}
+                <a 
+                  href={resumeLink.href}
+                  download
+                  className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-yellow-500 hover:to-amber-600 transition-all transform hover:scale-105"
+                >
+                  {resumeLink.name}
+                </a>
               </div>
             </div>
 
@@ -87,6 +101,15 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              {/* Resume download link for mobile */}
+              <a 
+                href={resumeLink.href}
+                download
+                className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-6 py-4 rounded-md text-2xl font-medium hover:from-yellow-500 hover:to-amber-600 transition-all mt-4"
+                onClick={toggleMenu}
+              >
+                {resumeLink.name}
+              </a>
             </div>
           </motion.div>
         )}

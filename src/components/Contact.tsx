@@ -10,6 +10,18 @@ export default function Contact() {
         <p className="text-gray-400 mb-8">
           Got a project, a wild idea, or just want to talk about the universe (or code)? My inbox is always open.
         </p>
+        
+        {/* Resume download button */}
+        <div className="mb-8">
+          <a
+            href="/Chloy_Costa_resume.pdf"
+            download
+            className="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 mb-6"
+          >
+            Download Resume
+          </a>
+        </div>
+        
         <div className="flex justify-center items-center gap-6">
           {/* THIS IS THE LINE THAT HAS BEEN CHANGED */}
           <a href="mailto:Chloycosta@proton.me" className="text-gray-400 hover:text-amber-500 transition-colors" aria-label="Email">
