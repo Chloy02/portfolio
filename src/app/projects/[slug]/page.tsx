@@ -7,8 +7,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 // This function generates the page title dynamically
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = projectsData.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
   if (!project) {
     return { title: "Project Not Found" };
   }
@@ -18,9 +19,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   // Find the project data that matches the slug from the URL
-  const project = projectsData.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
 
   // If no project is found, show a 404 page
   if (!project) {
