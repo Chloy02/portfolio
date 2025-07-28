@@ -11,6 +11,7 @@ const navLinks = [
   { name: "About", href: "/#about" }, // Also update these to be more explicit
   { name: "Projects", href: "/#projects" },
   { name: "Music", href: "/music" }, // <-- Changed from #music
+  { name: "Now", href: "/now" }, // <-- New Now page
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -45,7 +46,7 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <Link href="#" className="text-white font-bold text-xl">
+              <Link href="/" className="text-white font-bold text-xl">
                 Chloy Costa
               </Link>
             </div>
