@@ -61,10 +61,10 @@ export default function NowPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 mb-4">
-            What I'm up to now
+            What I&apos;m up to now
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A glimpse into my current world - what I'm reading, learning, building, and excited about.
+            A glimpse into my current world - what I&apos;m reading, learning, building, and excited about.
           </p>
         </div>
 
