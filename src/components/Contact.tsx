@@ -1,5 +1,5 @@
 // src/components/Contact.tsx
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa"; 
 import { HiOutlineMail } from "react-icons/hi";
 
 export default function Contact() {
@@ -23,7 +23,6 @@ export default function Contact() {
         </div>
         
         <div className="flex justify-center items-center gap-6">
-          {/* THIS IS THE LINE THAT HAS BEEN CHANGED */}
           <a href="mailto:Chloycosta@proton.me" className="text-gray-400 hover:text-amber-500 transition-colors" aria-label="Email">
             <HiOutlineMail size={30} />
           </a>
@@ -35,6 +34,10 @@ export default function Contact() {
           </a>
           <a href="https://instagram.com/chloy_costa" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors" aria-label="Instagram">
             <FaInstagram size={30} />
+          </a>
+          {/* 2. Add the Discord icon and link here */}
+          <a href="https://discord.com/users/chloycosta" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors" aria-label="Discord">
+            <FaDiscord size={30} />
           </a>
         </div>
       </div>
