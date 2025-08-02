@@ -4,7 +4,7 @@
 import { motion, Variants } from "framer-motion";
 import LottieAnimation from './LottieAnimation'; 
 
-const skills = [ "Python", "Java", "Kotlin", "SQL", "JavaScript", "R", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow", "PyTorch", "XGBoost", "Astropy", "Android (Jetpack Compose)", "React", "Node.js", "Streamlit", "Tailwind CSS", "PostgreSQL", "MySQL", "Linux (Fedora)", "Git", "Docker" ];
+const skills = [ "Python", "Java", "Kotlin", "SQL", "JavaScript", "R", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow", "PyTorch", "XGBoost", "Astropy", "React", "Node.js", "Streamlit", "Tailwind CSS", "PostgreSQL", "MySQL", "Linux (Fedora)", "Git"];
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0 },
